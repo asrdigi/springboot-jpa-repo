@@ -26,9 +26,9 @@ pipeline {
 	  
     stage('Jmeter'){
          steps{
-            bat label: 'jmeter', script: 'jmeter -n -jmeter.save.saveservice.output_format=xml \
-	   	-t D:\jmeter-results\jmeter-jenkins-demo.jmx \
-		-l D:\jmeter-test-results\Test.jtl'
+            bat label: 'jmeter  -n -Jjmeter.save.saveservice.output_format=xml \
+		 -t D:\jmetertestplans\jmeter-demo.jmx \
+		 -l D:\jmeter-test-results\test-demo.jtl'
           }
 	}
         
