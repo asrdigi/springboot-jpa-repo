@@ -136,6 +136,7 @@ public class EmployeeServiceImplIntegrationTest {
         
     }
 
+    /*
     @Test
     public void whenInValidId_thenEmployeeShouldNotBeFound() {
         Employee fromDb;
@@ -149,7 +150,7 @@ public class EmployeeServiceImplIntegrationTest {
 		}
         
     }
-
+  */
     @Test
     public void given3Employees_whengetAll_thenReturn3Records() {
         Employee alex = new Employee("alex");
