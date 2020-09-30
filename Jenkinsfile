@@ -24,12 +24,7 @@ pipeline {
 		}
 	}
 	  
-    stage('Jmeter'){
-         steps{
-	    // cd 	 C:\Program Files\apache-jmeter-5.3\bin
-            bat label: 'jmeter',script:'C:\\apache-jmeter-5.3\\bin\\jmeter -n -Jjmeter.save.saveservice.output_format=xml -t D:\\jmetertestplans\\jmeter-demo.jmx -l D:\\jmeter-test-results\\test-demo.jtl'
-          }
-	}
+    
         
 	stage('SonarQube'){
          steps{
@@ -38,6 +33,15 @@ pipeline {
  		-Dsonar.login=9384a2658e9c09b92823e7758c88a0d7558b87d1'''
           }
 	}
+	  
+	stage('Jmeter'){
+         steps{
+	    // cd 	 C:\Program Files\apache-jmeter-5.3\bin
+            bat label: 'jmeter',script:'C:\\apache-jmeter-5.3\\bin\\jmeter -n -Jjmeter.save.saveservice.output_format=xml -t D:\\jmetertestplans\\jmeter-demo.jmx -l D:\\jmeter-test-results\\test-demo.jtl'
+          }
+	}
+	  
+	  
 	
 	stage('Maven Package'){
 		steps{
